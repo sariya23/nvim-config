@@ -40,6 +40,12 @@ require("lazy").setup({
             require("lspconfig").gopls.setup {
                 on_attach = function(client, bufnr)
                     -- Настройте ваши on_attach параметры здесь, например:
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = bufnr,
+                        callback = function()
+                            vim.lsp.buf.format()  -- Выполняет автоформатирование при сохранении
+                        end,
+                    })
                     local opts = { noremap=true, silent=true, buffer=bufnr }
                     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
@@ -49,6 +55,7 @@ require("lazy").setup({
                 end,
                 settings = {
                     gopls = {
+                        gofumpt = true,
                         analyses = {
                             unusedparams = true,
                         },
