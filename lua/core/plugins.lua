@@ -85,6 +85,7 @@ require("lazy").setup({
         end,
 },
 { 'joshdick/onedark.vim' },
+-- { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 { 'hrsh7th/cmp-nvim-lsp' },
 {'hrsh7th/cmp-buffer'},
 {'hrsh7th/cmp-path'},
