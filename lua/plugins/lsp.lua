@@ -75,6 +75,10 @@ return {
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts) -- поиск мест, где используется метод.
 					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+                    -- Клавиша для закрытия quickfix или location list
+                    vim.keymap.set("n", "<leader>q", "<cmd>cclose<CR>", { noremap = true, silent = true }) -- Закрыть quickfix list
+                    vim.keymap.set("n", "<leader>l", "<cmd>lclose<CR>", { noremap = true, silent = true }) -- Закрыть location list
+
 					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set("n", "<Leader>D", vim.lsp.buf.type_definition, opts)
 					vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename Symbol" })
