@@ -18,8 +18,8 @@ vim.opt.mouse = "a"
 vim.opt.mousefocus = true
 
 -- Line Numbers
-vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.number = truevivim 
+vim.opt.relativenumber = true
 
 -- Splits
 vim.opt.splitbelow = true
